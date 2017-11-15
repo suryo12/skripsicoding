@@ -15,10 +15,8 @@ class NodeID(models.Model):
 class Data(models.Model):
     node_id = models.ForeignKey(NodeID, on_delete=models.CASCADE)
     tegangan = models.CharField(max_length=1000)
-    energy = models.CharField(max_length=1000)
     arus = models.FloatField(null=True, blank=True, default=None)
-    frekuensi = models.CharField(max_length=1000)
-    total_energy = models.CharField(max_length=1000)
+    daya = models.CharField(max_length=1000)
     tanggal = models.DateField(db_index=True, null=True, default=None)
     waktu = models.TimeField(db_index=True, null=True, default=None)
 
