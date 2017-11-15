@@ -1,0 +1,10 @@
+<h1>{{customer.nama}}</h1>
+<h3>{{customer.alamat}}</h3>
+<ul>
+    {% for energydata in customer.data_set.all %}
+        <li>{{energydata.timestamp}}<br>
+            {{energydata.arus}}<br>
+            {{energydata.total_energy}}</li>
+    {% endfor %}
+    <li> </li>
+</ul>

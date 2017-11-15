@@ -1,0 +1,10 @@
+{% if nodeid %}
+    <h3>Here all are the nodes</h3>
+    <ul>
+        {% for nodeids in nodeid %}
+            <li><a href="{% url 'landslide:detail' nodeid.id %}">{{nodeid.tanggal}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3>We haven't install any node</h3>
+{% endif %}

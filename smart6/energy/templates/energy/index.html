@@ -1,0 +1,10 @@
+{% if all_nodes %}
+    <h3>Here all are the nodes</h3>
+    <ul>
+        {% for customer in all_nodes %}
+            <li><a href="{% url 'energy:detail' customer.id %}">{{customer.nama}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3>We haven't install any node</h3>
+{% endif %}
