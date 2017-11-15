@@ -10,6 +10,16 @@
     <canvas id="buyers" width="600" height="400"></canvas>
 
 		<script>
+		{% block jquery %}
+		var endpoint = 'api/chart/data/'
+		var defaultData = []
+		var labels = []
+
+		labels = data.labels
+        defaultData = data.default
+        setChart()
+
+		function setChart() {
             //var defaultData = []
             //var labels = []
 		// line chart data
@@ -29,6 +39,9 @@
             var buyers = document.getElementById('buyers').getContext('2d');
             // draw line chart
             new Chart(buyers).Line(buyerData);
+        }
+
+        {% endblock %}
 		</script>
 </body>
 </html>

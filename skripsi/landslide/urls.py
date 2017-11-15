@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^api/$', APINodeView.as_view(), name='APINodeView'),
     #url(r'^(?P<nodeid_id>[0-9]+)/$', views.detail, name='detail'),
-    url(r'^(?P<nodeid_id>[0-9]+)/$', views.get_data_show, name='get_data_show'),
+    url(r'^(?P<nodeid_id>[0-9]+)/$', views.detail, name='detail'),
+    url(r'^(?P<data_id>[0-9]+)/$', views.get_data_show, name='data'),
 ]

@@ -72,6 +72,10 @@ def chart(request, data_id):
     datatanggal = Data.objects.filter(tanggal__contains = datetime.date(2017, 11, 13))
     return JsonResponse(datatanggal)
 
+def detail(request, nodeid_id):
+    nodeid = get_object_or_404(NodeID, id=nodeid_id)
+    return render(request, 'landslide/detail.html', {'nodeid': nodeid})
+
 class ChartData(APIView):
     authentication_classes = []
     permission_classes = []
@@ -80,8 +84,11 @@ class ChartData(APIView):
         gs_count = User.objects.all().count()
         label = []
         teg = []
-        for item in EnergyData.objects.all() :
-            if item.node_id.nama == "Suryo" :
+        energies_all = EnergyData.objects.all()
+        energies = EnergyData.objects.filter(tanggal__contains = datetime.date(2017, 11, 8))
+        print(energies)
+        for item in energies:
+            if item.node_id.nama == "Agung" :
                 label.append(item.waktu)
                 teg.append(item.tegangan)
         data = {
