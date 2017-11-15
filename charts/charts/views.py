@@ -45,7 +45,7 @@ class ChartData(APIView):
         energies = EnergyData.objects.filter(tanggal__contains = datetime.date(2017, 11, 8))
         print(energies)
         for item in energies:
-            if item.node_id.nama == "Suryo" :
+            if item.node_id.nama == "Agung" :
                 label.append(item.waktu)
                 teg.append(item.tegangan)
         data = {
