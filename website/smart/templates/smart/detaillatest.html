@@ -1,0 +1,12 @@
+{% extends 'smart/base.html' %}
+{% block title %}Tanggal Details{% endblock %}
+
+{% block body %}
+
+        <ul>
+            {% for node in nodes %}
+                <li><a href="{% url 'detail' node.id %}">{{ node.node_name }}</a></li>
+            {% endfor %}
+        </ul>
+
+{% endblock %}

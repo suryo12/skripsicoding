@@ -1,0 +1,11 @@
+{% extends 'smart/base.html' %}
+
+{% block body %}
+
+        <ul>
+            {% for node in nodes %}
+                <li><a href="{% url 'detail' node.id %}">{{ node.node_name }}</a></li>
+            {% endfor %}
+        </ul>
+
+{% endblock %}
